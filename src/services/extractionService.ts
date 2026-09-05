@@ -196,7 +196,7 @@ export async function processClinicalDocument(
     // Check for tabular lab lines
     // Pattern: [Test Name]  [Result]  (Optional Flag)  [Reference Range]  [Units]
     // Or delimited lines
-    const labLineRegex = /^([A-Za-z0-9\s,\-/\(\)]+?)\s{2,}([<>]?\s*[0-9.]+)\s+(?:(HIGH|LOW|CRITICAL|NORMAL|FLAG)\s+)?([<>]?\s*[0-9.]+(?:\s*[-–—to]+\s*[0-9.]+)?|\[.*?\]|[A-Za-z\s]+)\s{1,4}([A-Za-z0-9/%E\^μ\.\-]+)$/i;
+    const labLineRegex = /^([A-Za-z0-9\s,\-/\(\)]+?)\s{2,}([<>]?\s*[0-9.]+)\s+(?:(HIGH|LOW|CRITICAL|NORMAL|FLAG)\s+)?([<>]?\s*[0-9.]+(?:\s*[-–—to]+\s*[0-9.]+)?|\[.*?\]|[A-Za-z\s]+)\s+([A-Za-z0-9/%E\^μ\.\-]+)$/i;
     const match = line.match(labLineRegex);
 
     if (match) {
